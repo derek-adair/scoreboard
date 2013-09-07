@@ -1,0 +1,17 @@
+{
+    "id": 1,
+    "name": "Thunder Dome",
+    "players": [{
+        "id": 1,
+        "username": "wetfeetwhit",
+        "wins": 100,
+        "score": 33,
+        "toAdd": 0
+    },{
+        "id": 2,
+        "username": "derleek",
+        "wins": 522,
+        "score": 22,
+        "toAdd": 0
+    }]
+}

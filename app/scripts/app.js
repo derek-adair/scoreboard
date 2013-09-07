@@ -1,13 +1,24 @@
 'use strict';
 
 angular.module('scoreboardApp', [])
-  .config(function ($routeProvider) {
+.config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+    .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    })
+.when('/board', {
+    redirectTo: '/boards'
+})
+.when('/board/:boardId', {
+    templateUrl: 'views/board.html',
+    controller: 'BoardCtrl'
+})
+.when('/boards', {
+  templateUrl: 'views/boards.html',
+  controller: 'BoardsCtrl'
+})
+.otherwise({
+    redirectTo: '/'
+});
+});
