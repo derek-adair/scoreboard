@@ -1,7 +1,8 @@
-<div class="accordion" id="user-accordion"> 
-    <div ng-controller="BoardCtrl"  ng-repeat="player in players" class="accordion-group hero-unit">
+<div ng-controller="BoardCtrl" class="accordion" id="user-accordion" ng-keypress=""> 
+    <div ng-repeat="player in players" class="accordion-group hero-unit" ng-class="{active: selectedPlayer==player}" >
         <div class="accordion-heading user-header accordion-toggle" data-toggle="collapse" data-parent="#user-accordion" href="#collapse-{{player.username}}">
             <img class="avatar" width="50" height="50" src="./images/IMG_0092.JPG">
+            <input type="text" >
             <span class="wins">{{player.wins}}</span>
             <h1>{{player.username}}</h1>
         </div>
@@ -11,8 +12,8 @@
                     <div class="top-addend">{{player.score}}</div>
                     <div class="bottom-addend clearfix">
                         <div class="btn-group-vertical pull-right">
-                            <button ng-click="player.toAdd = player.toAdd + 1" class="btn"><span class="icon icon-arrow-up"></span></button>
-                            <button ng-click="player.toAdd = player.toAdd - 1" class="btn"><span class="icon icon-arrow-down"></span></button>
+                            <button ng-click="incrementScore(1,player)" class="btn"><span class="icon icon-arrow-up"></span></button>
+                            <button ng-click="incrementScore(-1,player)" class="btn"><span class="icon icon-arrow-down"></span></button>
                         </div>
                         <div class="amount-to-add">{{player.toAdd | displayPlus}}</div>
                     </div>
