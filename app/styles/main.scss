@@ -32,14 +32,16 @@ body {
 .accordion-inner { border-top: none; }
 
 .hero-unit {
-    font-size: 12px;
-    font-weight: 200;
-    line-height: 30px;
     background-color: #eee;
     border-radius: 6px;
-    padding: 10px;
+    padding: 15px;
     background-color: #B8862C;
     margin-bottom: 20px;
+}
+#user-accordion .hero-unit {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 60px;
 }
 
 .hero-unit h1 {
@@ -48,6 +50,7 @@ body {
     letter-spacing: -1px;
     display: inline;
     margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 .avatar {
@@ -76,19 +79,16 @@ body {
 
 .amount-to-add{
     font-weight: bold;
+    font-size: 100px;
 }
+
+.positive{color: green;}
+.negative{color: red;}
+.even {color: black;}
 
 .scoreboard{
     padding-left: 19%;
     padding-right: 19%;
-}
-
-.scoreboard .equation-top {
-    font-size: 100px;
-    line-height: 100px;
-}
-.sum {
-    border-top: 2px solid black;
 }
 
 .active {background-color: white;}

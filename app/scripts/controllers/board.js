@@ -10,7 +10,6 @@ angular.module('scoreboardApp')
     });
 
     $scope.incrementScore = function (howMuch, thePlayer) {
-        $scope.selectedPlayer = thePlayer;
         thePlayer.toAdd += howMuch;
     };
 

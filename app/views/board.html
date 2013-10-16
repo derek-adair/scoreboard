@@ -1,25 +1,19 @@
-<div ng-controller="BoardCtrl" class="accordion" id="user-accordion" ng-keypress=""> 
-    <div ng-repeat="player in players" class="accordion-group hero-unit" ng-class="{active: selectedPlayer==player}" >
+<div ng-controller="BoardCtrl" class="accordion" id="user-accordion"> 
+    <div ng-repeat="player in players" class="accordion-group hero-unit" ng-class="{active: selectedPlayer==player}" ng-enter="submitScore(player)">
         <div class="accordion-heading user-header accordion-toggle" data-toggle="collapse" data-parent="#user-accordion" href="#collapse-{{player.username}}">
             <img class="avatar" width="50" height="50" src="./images/IMG_0092.JPG">
-            <input type="text" >
             <span class="wins">{{player.wins}}</span>
             <h1>{{player.username}}</h1>
         </div>
         <div id="collapse-{{player.username}}" class="accordion-body collapse in scoreboard">
             <div class="accordion-inner">
-                <div class="equation-top">
-                    <div class="top-addend">{{player.score}}</div>
-                    <div class="bottom-addend clearfix">
-                        <div class="btn-group-vertical pull-right">
-                            <button ng-click="incrementScore(1,player)" class="btn"><span class="icon icon-arrow-up"></span></button>
-                            <button ng-click="incrementScore(-1,player)" class="btn"><span class="icon icon-arrow-down"></span></button>
-                        </div>
-                        <div class="amount-to-add">{{player.toAdd | displayPlus}}</div>
-                    </div>
-                    <div class="sum">{{player.score + player.toAdd}}</div>
+                <div class="btn-group-vertical pull-right">
+                    <button ng-click="incrementScore(1,player)" class="btn"><span class="icon icon-arrow-up"></span></button>
+                    <button ng-click="incrementScore(-1,player)" class="btn"><span class="icon icon-arrow-down"></span></button>
                 </div>
+                <div class="amount-to-add" ng-class="{positive: player.toAdd > 0, negative: player.toAdd < 0, even: player.toAdd == 0}">{{player.score + player.toAdd}}</div>
             </div>
         </div>
     </div>
+</div>
 </div>
